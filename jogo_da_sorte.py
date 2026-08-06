@@ -15,7 +15,7 @@ def atraso():
 
 modo_jogo = questionary.select(
     "Selecione o modo de jogo:",
-    choices=["MÉDIA DE SORTE", "ATÉ O LIMITE"]
+    choices=["MÉDIA DE SORTE", "ATÉ O LIMITE", "SAIR"]
 ).ask()
 
 if modo_jogo == "MÉDIA DE SORTE":
@@ -39,7 +39,7 @@ if modo_jogo == "MÉDIA DE SORTE":
             print(f"{vermelho}Você errou! ;({reset}")
     media = (f"{((pontuacao / 10) * 100):.0f} %")
     print(f"""Nível de sorte: {media}""")
-else:
+elif modo_jogo == "ATÉ O LIMITE":
     escolha_usuario = ""
     moeda = ""
 
@@ -58,4 +58,7 @@ else:
             pontuacao += 1
     print(f"""{vermelho}Você errou!{reset}
     Pontuação máxima: {pontuacao}""")
+else:
+    pass
+
 
