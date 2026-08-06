@@ -1,4 +1,5 @@
 import random
+import questionary
 
 opcoes = ["Pedra", "Papel", "Tesoura"]
 
@@ -6,7 +7,10 @@ ppt_bot = random.choice(opcoes)
 
 print("""PEDRA, PAPEL OU TESOURA
 > Digite qual deseja escolher""")
-ppt_usuario = input("Escolha: ").capitalize()
+ppt_usuario = questionary.select(
+    "Escolha uma opção:",
+    choices=["Pedra", "Papel", "Tesoura"]
+).ask()
 
 while ppt_usuario not in opcoes:
     print("Opção inválida.")
